@@ -1,6 +1,6 @@
 # ⚡ Dashboard Ejecutivo de Ventas — Electromart (De Excel a Power BI)
 
-![Power BI](https://img.shields.io/badge/Power_BI-Desktop_%26_Service-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+[![Power BI Service](https://img.shields.io/badge/Power_BI_Service-Ver_en_Nube-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/b6b39ac8-21ee-4414-b3d6-ebb41c057b20/429d87bf754c01dc360e?experience=power-bi)
 ![DAX](https://img.shields.io/badge/DAX-Time_Intelligence-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Modelado](https://img.shields.io/badge/Modelado-Esquema_Estrella-107C41?style=for-the-badge&logo=powerbi&logoColor=white)
 ![Formato](https://img.shields.io/badge/Formato-PBIP_%2F_TMDL-00A4EF?style=for-the-badge&logo=microsoft&logoColor=white)
@@ -38,10 +38,12 @@ Aunque el prototipo inicial en Excel permitía una visualización básica de los
 
 ---
 
-#### 🟢 El Después: Centro de Control Ejecutivo (Power BI PBIP)
-*Diseño moderno de alto contraste con Sidebar Navy corporativo, KPIs dinámicos con variación interanual (YoY), gráfico combinado de ventas vs. margen y barras 100% apiladas.*
+#### 🟢 El Después: Centro de Control Ejecutivo en la Nube (Power BI Service)
+*Diseño moderno de alto contraste con Sidebar Navy corporativo, KPIs dinámicos con variación interanual (YoY), gráfico combinado de ventas vs. margen y barras 100% apiladas, desplegado y operativo en Power BI Service.*
 
-![Dashboard en Power BI - Después](assets/dashboard_powerbi_despues.jpg)
+[![Abrir en Power BI Service](https://img.shields.io/badge/🚀_Abrir_en_Power_BI_Service-Cloud_Interactive-0078D4?style=for-the-badge&logo=powerbi&logoColor=white)](https://app.powerbi.com/groups/me/reports/b6b39ac8-21ee-4414-b3d6-ebb41c057b20/429d87bf754c01dc360e?experience=power-bi)
+
+![Dashboard en Power BI Service](assets/dashboard_powerbi_service.jpg)
 
 ---
 
@@ -78,7 +80,12 @@ Aunque el prototipo inicial en Excel permitía una visualización básica de los
 
 Para asegurar tiempos de respuesta inmediatos, evitar ambigüedades en los filtros cruzados y mantener un gobierno de datos limpio y profesional, se estructuró un **Modelo de Datos en Estrella (Star Schema)**:
 
-![Vista del Modelo de Datos en Power BI](assets/modelo_estrella_powerbi.png)
+![Vista del Modelo de Datos en Power BI Desktop](assets/modelo_estrella_powerbi.png)
+
+#### ☁️ Modelo Semántico Desplegado en la Nube (Power BI Service)
+El modelo semántico relacional en estrella y la totalidad de medidas DAX se encuentran completamente publicados, gobernados y operativos en **Power BI Service (Cloud)**:
+
+![Vista del Modelo Semántico en Power BI Service](assets/modelo_semantico_powerbi_service.jpg)
 
 > **Estructura relacional limpia:** La tabla de hechos transaccional (`Ventas Supermercado`) se ubica en el centro, rodeada por sus dimensiones maestras conectadas mediante relaciones unidireccionales 1:N (`Calendario`, `Clientes`, `Productos`), y con una tabla contenedora desacoplada (`_Medidas`) que centraliza toda la lógica analítica.
 
@@ -272,7 +279,10 @@ dashboard-ventas-electromart/
 │
 ├── assets/                                    # Imágenes y recursos del README
 │   ├── dashboard_excel_antes.jpg
-│   └── dashboard_powerbi_despues.jpg
+│   ├── dashboard_powerbi_despues.jpg
+│   ├── dashboard_powerbi_service.jpg
+│   ├── modelo_estrella_powerbi.png
+│   └── modelo_semantico_powerbi_service.jpg
 │
 ├── ventas_electromart.xlsx                    # Dataset transaccional auditado (51.290 filas)
 ├── dimensiones_electromart.xlsx               # Tablas auxiliares de clientes y productos
