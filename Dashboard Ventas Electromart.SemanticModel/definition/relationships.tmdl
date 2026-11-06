@@ -1,0 +1,12 @@
+relationship 05ec9bdf-0f8e-46d0-8edc-5990e5102fd3
+	fromColumn: 'Ventas Supermercado'.'Fecha Salida'
+	toColumn: Calendario.Fecha
+
+relationship 0c4adf0a-66c1-4db5-ac18-47816602ecc4
+	fromColumn: 'Ventas Supermercado'.'ID Cliente'
+	toColumn: Clientes.'ID Cliente'
+
+relationship 3d17f4cf-6908-41f5-87b4-98f3a2b38678
+	fromColumn: 'Ventas Supermercado'.'ID Producto'
+	toColumn: Productos.'ID Producto'
+

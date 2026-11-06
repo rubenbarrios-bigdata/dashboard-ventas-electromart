@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard Ventas Electromart"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f7c78260-2ac0-4933-9275-62f242a048bb"
+  }
+}

@@ -1,0 +1,369 @@
+table 'Ventas Supermercado'
+	lineageTag: a8d13e3b-aa06-47db-9ecf-9952c11b5794
+
+	column 'Número Venta'
+		dataType: int64
+		formatString: 0
+		lineageTag: c0476515-237c-4bf3-bd14-c25521320166
+		summarizeBy: sum
+		sourceColumn: Número Venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Venta'
+		dataType: string
+		lineageTag: 7b0e579e-d1cc-40b5-9f9d-88b0b315eafc
+		summarizeBy: none
+		sourceColumn: ID Venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Salida'
+		dataType: int64
+		formatString: 0
+		lineageTag: af4545d2-3889-474c-bc2b-ea9d163f2f2d
+		summarizeBy: sum
+		sourceColumn: Mes Salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia Salida'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5656ada0-8545-40ba-aae3-ca0b2e2e0a4f
+		summarizeBy: sum
+		sourceColumn: Dia Salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año Salida'
+		dataType: int64
+		formatString: 0
+		lineageTag: f2f56fef-97a8-4600-a50e-d87a0c70c8f3
+		summarizeBy: sum
+		sourceColumn: Año Salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Salida'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8fb54566-9452-4b7b-a62b-dc082c216dab
+		summarizeBy: none
+		sourceColumn: Fecha Salida
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dia Semana Salida'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b1800af-bd06-429a-a114-343ea0651b21
+		summarizeBy: sum
+		sourceColumn: Dia Semana Salida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a451ff6-ce0b-4140-a249-119d0f16c983
+		summarizeBy: sum
+		sourceColumn: Mes Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 572e1c7a-730b-472a-8d2c-9b29b43e9a71
+		summarizeBy: sum
+		sourceColumn: Dia Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Año Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: f686730e-30b8-4187-914d-a35087388e6c
+		summarizeBy: sum
+		sourceColumn: Año Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Entrega'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0469dcdf-cab9-4aeb-b693-53897a1d84b1
+		summarizeBy: none
+		sourceColumn: Fecha Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dia Semana Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 50ad4232-7c96-4492-85db-7eba9c6f6cd1
+		summarizeBy: sum
+		sourceColumn: Dia Semana Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Días para entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 70baa1be-3e60-4fb8-966e-862e0d318a3d
+		summarizeBy: sum
+		sourceColumn: Días para entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dias Laborables para Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c2af71b-ac67-447a-86a4-63057afad087
+		summarizeBy: sum
+		sourceColumn: Dias Laborables para Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Método Envio'
+		dataType: string
+		lineageTag: 8d77d417-8aae-42ea-bab3-f76c16e073bd
+		summarizeBy: none
+		sourceColumn: Método Envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Cliente'
+		dataType: string
+		lineageTag: 59a3f1cb-5ac2-4e67-adae-e13e28900469
+		summarizeBy: none
+		sourceColumn: ID Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número Cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7876e8d8-d977-4dc8-a852-e140971ad635
+		summarizeBy: sum
+		sourceColumn: Número Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Cliente'
+		dataType: string
+		lineageTag: 7ce6867c-56e2-4807-bf73-127bb7e9d440
+		summarizeBy: none
+		sourceColumn: Nombre Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: 7ed2f62c-6aaf-47a2-a9b2-33dab1d9b55f
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ciudad
+		dataType: string
+		lineageTag: 0770ac2c-1ac2-438a-a875-788643f164e7
+		summarizeBy: none
+		sourceColumn: Ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: bee23dde-1845-4b74-bf79-1945db33772e
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column País
+		dataType: string
+		lineageTag: d257482c-c7f2-463a-b161-63f2465a2c77
+		summarizeBy: none
+		sourceColumn: País
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mercado
+		dataType: string
+		lineageTag: 2497f91e-ff7c-44a0-925d-136880bd8643
+		summarizeBy: none
+		sourceColumn: Mercado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Región
+		dataType: string
+		lineageTag: 6ce3fb7a-d4f8-49c9-98d5-8b669302aaf9
+		summarizeBy: none
+		sourceColumn: Región
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Producto'
+		dataType: string
+		lineageTag: ec75d8f4-5401-4984-b131-b0738779ca4e
+		summarizeBy: none
+		sourceColumn: ID Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoría
+		dataType: string
+		lineageTag: aba17810-fba9-4382-83c4-45971b1fd755
+		summarizeBy: none
+		sourceColumn: Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Categoría
+		dataType: string
+		lineageTag: 14871f22-987c-40ed-8188-28c048a7ba2e
+		summarizeBy: none
+		sourceColumn: Sub-Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Producto'
+		dataType: string
+		lineageTag: f2dc5b3a-a5d0-46a2-bdf7-4c6d4e82864e
+		summarizeBy: none
+		sourceColumn: Nombre Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ventas
+		dataType: double
+		lineageTag: 3c490713-94d0-4998-b2c9-9953836940b3
+		summarizeBy: sum
+		sourceColumn: Ventas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 5534845b-4e63-4f5d-a3c8-b258a0b30e96
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descuento
+		dataType: double
+		lineageTag: e4e1f04c-170b-4781-bf02-5c7f890e8099
+		summarizeBy: sum
+		sourceColumn: Descuento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Utilidad
+		dataType: double
+		lineageTag: d108357a-d0db-4731-9f7e-64880fa8961c
+		summarizeBy: sum
+		sourceColumn: Utilidad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Resultado Venta'
+		dataType: string
+		lineageTag: 9e304855-aa05-499e-a096-7fe421074e28
+		summarizeBy: none
+		sourceColumn: Resultado Venta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costo Envío'
+		dataType: double
+		lineageTag: 48ca2b9f-a598-4395-a19f-888747e2bc6b
+		summarizeBy: sum
+		sourceColumn: Costo Envío
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Prioridad Envio'
+		dataType: string
+		lineageTag: 1a1ed201-77aa-40e3-a993-1c720c24d2d1
+		summarizeBy: none
+		sourceColumn: Prioridad Envio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Efectividad Prioridad'
+		dataType: string
+		lineageTag: 4e4c8e72-b02b-4731-8fa7-adb8fdc45587
+		summarizeBy: none
+		sourceColumn: Efectividad Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mes Nombre'
+		dataType: string
+		lineageTag: d4f97876-d4d6-4d6f-a22e-6b8bf2439f5c
+		summarizeBy: none
+		sourceColumn: Mes Nombre
+		sortByColumn: 'Mes Salida'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Día Semana Nombre'
+		dataType: string
+		lineageTag: f49606e7-8f36-4cc1-a9b9-53a202ad7e89
+		summarizeBy: none
+		sourceColumn: Día Semana Nombre
+		sortByColumn: 'Dia Semana Salida'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Ventas Supermercado' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\ismar\Downloads\dashboard_ventas_electromart\ventas_electromart.xlsx"), null, true),
+				    #"Ventas Supermercado_Sheet" = Origen{[Item="Ventas Supermercado",Kind="Sheet"]}[Data],
+				    #"Encabezados Promovidos" = Table.PromoteHeaders(#"Ventas Supermercado_Sheet", [PromoteAllScalars=true]),
+				    #"Tipo Cambiado" = Table.TransformColumnTypes(#"Encabezados Promovidos",{
+				        {"Número Venta", Int64.Type}, {"ID Venta", type text},
+				        {"Mes Salida", Int64.Type}, {"Dia Salida", Int64.Type}, {"Año Salida", Int64.Type}, {"Fecha Salida", type date}, {"Dia Semana Salida", Int64.Type},
+				        {"Mes Entrega", Int64.Type}, {"Dia Entrega", Int64.Type}, {"Año Entrega", Int64.Type}, {"Fecha Entrega", type date}, {"Dia Semana Entrega", Int64.Type},
+				        {"Días para entrega", Int64.Type}, {"Dias Laborables para Entrega", Int64.Type},
+				        {"Método Envio", type text}, {"ID Cliente", type text}, {"Número Cliente", Int64.Type}, {"Nombre Cliente", type text},
+				        {"Segmento", type text}, {"Ciudad", type text}, {"Estado", type text}, {"País", type text},
+				        {"Mercado", type text}, {"Región", type text},
+				        {"ID Producto", type text}, {"Categoría", type text}, {"Sub-Categoría", type text}, {"Nombre Producto", type text},
+				        {"Ventas", type number}, {"Cantidad", Int64.Type}, {"Descuento", type number}, {"Utilidad", type number},
+				        {"Resultado Venta", type text}, {"Costo Envío", type number}, {"Prioridad Envio", type text}, {"Efectividad Prioridad", type text}
+				    }),
+				    #"Mes Nombre Agregado" = Table.AddColumn(#"Tipo Cambiado", "Mes Nombre", each
+				        let m = [Mes Salida] in
+				        if m = 1 then "Ene" else if m = 2 then "Feb" else if m = 3 then "Mar" else if m = 4 then "Abr"
+				        else if m = 5 then "May" else if m = 6 then "Jun" else if m = 7 then "Jul" else if m = 8 then "Ago"
+				        else if m = 9 then "Sep" else if m = 10 then "Oct" else if m = 11 then "Nov" else "Dic", type text),
+				    #"Día Semana Nombre Agregado" = Table.AddColumn(#"Mes Nombre Agregado", "Día Semana Nombre", each
+				        let d = [Dia Semana Salida] in
+				        if d = 1 then "Lun" else if d = 2 then "Mar" else if d = 3 then "Mié" else if d = 4 then "Jue"
+				        else if d = 5 then "Vie" else if d = 6 then "Sáb" else "Dom", type text)
+				in
+				    #"Día Semana Nombre Agregado"
+
+	annotation PBI_ResultType = Table
+

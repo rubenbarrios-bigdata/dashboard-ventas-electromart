@@ -1,0 +1,23 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Ventas Supermercado","Clientes","Productos","_Medidas"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Ventas Supermercado'
+ref table Calendario
+ref table _Medidas
+ref table Clientes
+ref table Productos
+
+ref cultureInfo es-ES
+

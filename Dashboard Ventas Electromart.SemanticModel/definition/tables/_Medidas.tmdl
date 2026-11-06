@@ -1,0 +1,227 @@
+table _Medidas
+	lineageTag: 843f53aa-6621-497b-9196-c38859d23c7f
+
+	measure 'Ventas Totales' = SUM ( 'Ventas Supermercado'[Ventas] )
+		formatString: \$#,0
+		displayFolder: 01 KPIs
+		lineageTag: 82687988-ea88-4b7c-b71a-0156f3994de9
+
+	measure 'Ticket Promedio' = DIVIDE ( [Ventas Totales], [Volumen Compras], 0 )
+		formatString: \$#,0.00
+		displayFolder: 01 KPIs
+		lineageTag: 52ccb23e-4d35-4c4c-8bc1-023ddb2aa2cc
+
+	measure 'Volumen Compras' = COUNTROWS ( 'Ventas Supermercado' )
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: d1076b37-1d5e-40fb-a055-3d10312b1390
+
+	measure 'Clientes Unicos' = DISTINCTCOUNT ( 'Ventas Supermercado'[ID Cliente] )
+		formatString: #,0
+		displayFolder: 01 KPIs
+		lineageTag: 2a9ad4ec-31c6-4dad-959b-1d710deb08dc
+
+	measure 'Utilidad Total' = SUM ( 'Ventas Supermercado'[Utilidad] )
+		formatString: \$#,0;-\$#,0;\$0
+		displayFolder: 02 Rentabilidad
+		lineageTag: b5c0a38c-50bd-487c-82aa-50b5e5de76ef
+
+	measure 'Margen Utilidad %' = DIVIDE ( [Utilidad Total], [Ventas Totales], 0 )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 02 Rentabilidad
+		lineageTag: 3099b716-4645-4aaf-8c11-995e2981f682
+
+	measure 'Costo Envio Total' = SUM ( 'Ventas Supermercado'[Costo Envío] )
+		formatString: \$#,0
+		displayFolder: 03 Logística
+		lineageTag: baa97887-600c-4f20-9339-3db26fad387b
+
+	measure 'Dias Promedio Envio' = AVERAGE ( 'Ventas Supermercado'[Días para entrega] )
+		formatString: 0.0
+		displayFolder: 03 Logística
+		lineageTag: 671695dc-7e20-4db5-b83f-1a7b5d13c2b9
+
+	measure 'Mayor Mes Ventas Valor' = MAXX ( VALUES ( 'Calendario'[Mes] ), [Ventas Totales] )
+		formatString: \$#,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: e24f2e9f-1f03-4382-8f1d-3c7eb628a62b
+
+	measure 'Mayor Mes Ventas Texto' = VAR _Top = TOPN ( 1, VALUES ( 'Calendario'[Mes] ), [Ventas Totales], DESC ) RETURN "Mayor mes ventas: " & LOWER ( CONCATENATEX ( _Top, 'Calendario'[Mes] ) )
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 004e8fba-34a1-4129-af03-41d7697a779e
+
+	measure 'Menor Mes Ventas Valor' = MINX ( VALUES ( 'Calendario'[Mes] ), [Ventas Totales] )
+		formatString: \$#,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 6bfbc800-3974-470b-9f7f-650365349876
+
+	measure 'Menor Mes Ventas Texto' = VAR _Bottom = TOPN ( 1, VALUES ( 'Calendario'[Mes] ), [Ventas Totales], ASC ) RETURN "Menor mes ventas: " & LOWER ( CONCATENATEX ( _Bottom, 'Calendario'[Mes] ) )
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 52132fc4-6f7c-43bd-a9d5-6384b3c8cb44
+
+	measure 'Promedio Ventas Mensuales' = AVERAGEX ( VALUES ( 'Calendario'[Mes] ), [Ventas Totales] )
+		formatString: \$#,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: da0a7ec0-15dc-4ed5-ac8b-3e8b089c645f
+
+	measure 'Ventas Año Anterior' = CALCULATE ( [Ventas Totales], SAMEPERIODLASTYEAR ( 'Calendario'[Fecha] ) )
+		formatString: \$#,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 19780e7f-3626-415c-9346-06db28b96d33
+
+	measure 'Variacion Ventas YoY %' = DIVIDE ( [Ventas Totales] - [Ventas Año Anterior], [Ventas Año Anterior], 0 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 89048acb-d9b2-4321-9081-948028d6c396
+
+	measure 'Ventas Top 5 Clientes' =
+			VAR _Rk = RANKX ( ALLSELECTED ( 'Ventas Supermercado'[Nombre Cliente] ), [Ventas Totales], , DESC )
+			RETURN IF ( _Rk <= 5, [Ventas Totales] )
+		formatString: \$#,0
+		displayFolder: 01 KPIs
+		lineageTag: 71a8080c-03d3-4629-8738-9cb5e3477192
+
+	measure 'Ventas Top 5 Países' =
+			VAR _Rk = RANKX ( ALLSELECTED ( 'Ventas Supermercado'[País] ), [Ventas Totales], , DESC )
+			RETURN IF ( _Rk <= 5, [Ventas Totales] )
+		formatString: \$#,0
+		displayFolder: 01 KPIs
+		lineageTag: 849b2910-1849-4395-8819-338290ba5173
+
+	measure 'Ticket Promedio Año Anterior' = CALCULATE ( [Ticket Promedio], SAMEPERIODLASTYEAR ( 'Calendario'[Fecha] ) )
+		formatString: \$#,0.00
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: beb3bc08-c9ff-4cf2-b563-19a19620687d
+
+	measure 'Variacion Ticket YoY %' = DIVIDE ( [Ticket Promedio] - [Ticket Promedio Año Anterior], [Ticket Promedio Año Anterior], 0 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 6de393e4-e327-45d9-9223-cee5e94e6083
+
+	measure 'Volumen Compras Año Anterior' = CALCULATE ( [Volumen Compras], SAMEPERIODLASTYEAR ( 'Calendario'[Fecha] ) )
+		formatString: #,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: a09568aa-5430-4d36-adca-8a871b1a39da
+
+	measure 'Variacion Volumen YoY %' = DIVIDE ( [Volumen Compras] - [Volumen Compras Año Anterior], [Volumen Compras Año Anterior], 0 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: 5e902e4c-4ac9-4ff5-9061-d57e6131d870
+
+	measure 'Clientes Unicos Año Anterior' = CALCULATE ( [Clientes Unicos], SAMEPERIODLASTYEAR ( 'Calendario'[Fecha] ) )
+		formatString: #,0
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: daddfd2b-6ff9-4919-9722-58d59008405c
+
+	measure 'Variacion Clientes YoY %' = DIVIDE ( [Clientes Unicos] - [Clientes Unicos Año Anterior], [Clientes Unicos Año Anterior], 0 )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 04 Dinámica Temporal
+		lineageTag: eb1f0017-664e-4a37-85b1-ba5b9560b6d0
+
+	measure 'Badge Ventas YoY' =
+			VAR _ant = [Ventas Año Anterior]
+			VAR _pct = [Variacion Ventas YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "Año base (2011)",
+			        IF ( _pct >= 0, "▲ +" & FORMAT ( _pct, "0.0%" ) & " vs. año anterior", "▼ " & FORMAT ( _pct, "0.0%" ) & " vs. año anterior" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: e904a87d-0fba-4e57-b612-30da3e1833cc
+
+	measure 'Badge Ticket YoY' =
+			VAR _ant = [Ticket Promedio Año Anterior]
+			VAR _pct = [Variacion Ticket YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "Año base (2011)",
+			        IF ( _pct >= 0, "▲ +" & FORMAT ( _pct, "0.0%" ) & " vs. año anterior", "▼ " & FORMAT ( _pct, "0.0%" ) & " vs. año anterior" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: bf4bc95b-48d9-493e-98e3-c25cecfd2464
+
+	measure 'Badge Volumen YoY' =
+			VAR _ant = [Volumen Compras Año Anterior]
+			VAR _pct = [Variacion Volumen YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "Año base (2011)",
+			        IF ( _pct >= 0, "▲ +" & FORMAT ( _pct, "0.0%" ) & " vs. año anterior", "▼ " & FORMAT ( _pct, "0.0%" ) & " vs. año anterior" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: 7415acd5-9c7f-4f36-bc78-a5bb14a2e22a
+
+	measure 'Badge Clientes YoY' =
+			VAR _ant = [Clientes Unicos Año Anterior]
+			VAR _pct = [Variacion Clientes YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "Año base (2011)",
+			        IF ( _pct >= 0, "▲ +" & FORMAT ( _pct, "0.0%" ) & " vs. año anterior", "▼ " & FORMAT ( _pct, "0.0%" ) & " vs. año anterior" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: 0ff6d536-20f5-4ccb-809d-56e0528323bb
+
+	measure 'Color Ventas YoY' =
+			VAR _ant = [Ventas Año Anterior]
+			VAR _pct = [Variacion Ventas YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "#64748B",
+			        IF ( _pct >= 0, "#16A34A", "#DC2626" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: 498b80ec-33ba-46a2-9f0f-bf57679592e7
+
+	measure 'Color Ticket YoY' =
+			VAR _ant = [Ticket Promedio Año Anterior]
+			VAR _pct = [Variacion Ticket YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "#64748B",
+			        IF ( _pct >= 0, "#16A34A", "#DC2626" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: 59e115b6-92b7-48c9-ade5-5083bb824e50
+
+	measure 'Color Volumen YoY' =
+			VAR _ant = [Volumen Compras Año Anterior]
+			VAR _pct = [Variacion Volumen YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "#64748B",
+			        IF ( _pct >= 0, "#16A34A", "#DC2626" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: e430f817-c832-42f6-80a3-ed934840b7a5
+
+	measure 'Color Clientes YoY' =
+			VAR _ant = [Clientes Unicos Año Anterior]
+			VAR _pct = [Variacion Clientes YoY %]
+			RETURN
+			    IF (
+			        ISBLANK ( _ant ) || _ant = 0,
+			        "#64748B",
+			        IF ( _pct >= 0, "#16A34A", "#DC2626" )
+			    )
+		displayFolder: 01 KPIs
+		lineageTag: 325a0117-1b04-48f0-85bb-24aea5ddb768
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Columnas quitadas" = Table.RemoveColumns(Source,{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

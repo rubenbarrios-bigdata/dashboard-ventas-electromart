@@ -1,0 +1,16 @@
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Power BI temp files
+*.pbitemp
+*.tmp
+*.log
+
+# Python / Cache
+__pycache__/
+*.pyc
+
+# OS generated
+.DS_Store

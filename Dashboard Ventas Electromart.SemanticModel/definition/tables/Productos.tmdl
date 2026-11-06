@@ -1,0 +1,48 @@
+table Productos
+	lineageTag: 7343c539-cb5a-487c-a802-b131ddd0c30c
+
+	column 'ID Producto'
+		dataType: string
+		isKey
+		lineageTag: ea4cac2a-7b00-4e0d-929f-576ed17c0df5
+		summarizeBy: none
+		sourceColumn: ID Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoría
+		dataType: string
+		lineageTag: c0808c68-e7ec-4d07-90f6-483b26eba51e
+		summarizeBy: none
+		sourceColumn: Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Categoría
+		dataType: string
+		lineageTag: d5179323-1ec2-4c26-83f6-1340c85515cd
+		summarizeBy: none
+		sourceColumn: Sub-Categoría
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Producto'
+		dataType: string
+		lineageTag: e303a213-c0ff-4f33-9df3-ba44684eba49
+		summarizeBy: none
+		sourceColumn: Nombre Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Productos = m
+		mode: import
+		source =
+				let
+				    Origen = #"Ventas Supermercado",
+				    Columnas = Table.SelectColumns(Origen, {"ID Producto", "Categoría", "Sub-Categoría", "Nombre Producto"}),
+				    SinDuplicados = Table.Distinct(Columnas, {"ID Producto"})
+				in
+				    SinDuplicados
+
+	annotation PBI_ResultType = Table
+
