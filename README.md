@@ -76,7 +76,11 @@ Aunque el prototipo inicial en Excel permitía una visualización básica de los
 
 ## 🧱 Arquitectura de Datos y Modelado en Estrella
 
-Para asegurar tiempos de respuesta en milisegundos y evitar filtros cruzados bidireccionales ambiguos, se desacopló la tabla transaccional masiva en un **Esquema Estrella (Kimball Star Schema)**:
+Para asegurar tiempos de respuesta inmediatos, evitar ambigüedades en los filtros cruzados y mantener un gobierno de datos limpio y profesional, se estructuró un **Modelo de Datos en Estrella (Star Schema)**:
+
+![Vista del Modelo de Datos en Power BI](assets/modelo_estrella_powerbi.png)
+
+> **Estructura relacional limpia:** La tabla de hechos transaccional (`Ventas Supermercado`) se ubica en el centro, rodeada por sus dimensiones maestras conectadas mediante relaciones unidireccionales 1:N (`Calendario`, `Clientes`, `Productos`), y con una tabla contenedora desacoplada (`_Medidas`) que centraliza toda la lógica analítica.
 
 ```mermaid
 erDiagram
@@ -299,3 +303,4 @@ dashboard-ventas-electromart/
 **Rubén David Barrios Bello**  
 *Data & Business Intelligence Analyst*  
 * [LinkedIn](https://linkedin.com/in/rubenbarrios-bigdata) • [GitHub](https://github.com/rubenbarrios-bigdata) • [Portfolio](https://rubenbarrios-bigdata.github.io)
+
