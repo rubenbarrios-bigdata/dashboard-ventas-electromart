@@ -1,10 +1,10 @@
 # ⚡ Dashboard Ejecutivo de Ventas — Electromart (De Excel a Power BI)
 
-[![Power BI](https://img.shields.io/badge/Power_BI-PBIP-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
-[![DAX](https://img.shields.io/badge/DAX-Time_Intelligence-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/dax/)
-[![TMDL](https://img.shields.io/badge/TMDL-Fabric_Ready-00A4EF?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/power-bi/developer/projects/projects-overview)
-[![Data Modeling](https://img.shields.io/badge/Data_Modeling-Star_Schema-107C41?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://en.wikipedia.org/wiki/Star_schema)
-[![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)]()
+![Power BI](https://img.shields.io/badge/Power_BI-Desktop_%26_Service-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![DAX](https://img.shields.io/badge/DAX-Time_Intelligence-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Modelado](https://img.shields.io/badge/Modelado-Esquema_Estrella-107C41?style=for-the-badge&logo=powerbi&logoColor=white)
+![Formato](https://img.shields.io/badge/Formato-PBIP_%2F_TMDL-00A4EF?style=for-the-badge&logo=microsoft&logoColor=white)
+![Estado](https://img.shields.io/badge/Estado-Completado-success?style=for-the-badge)
 
 > **De una hoja de cálculo en Excel a un Centro de Control Ejecutivo en Power BI:** Caso de estudio de migración, modelado dimensional, gobierno de datos, inteligencia temporal avanzada en DAX y diseño de experiencia de usuario (UX/UI) orientado a la alta dirección.
 
