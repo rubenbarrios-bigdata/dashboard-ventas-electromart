@@ -1,6 +1,6 @@
 # ⚡ Dashboard Ejecutivo de Ventas — Electromart (De Excel a Power BI)
 
-[![Power BI Service](https://img.shields.io/badge/Power_BI_Service-Ver_en_Nube-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/b6b39ac8-21ee-4414-b3d6-ebb41c057b20/429d87bf754c01dc360e?experience=power-bi)
+[![Power BI Service](https://img.shields.io/badge/Power_BI_Service-Ver_en_Nube-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiNDJiZGJmNGQtYmI0Ny00OWM2LWIzNTAtOWRiNTUyMjUwMDZiIiwidCI6IjgxY2NjYzQzLWI1NjEtNDFmNy05NDgwLWU5ZThmMDI3YzQ0MyIsImMiOjR9)
 ![DAX](https://img.shields.io/badge/DAX-Time_Intelligence-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Modelado](https://img.shields.io/badge/Modelado-Esquema_Estrella-107C41?style=for-the-badge&logo=powerbi&logoColor=white)
 ![Formato](https://img.shields.io/badge/Formato-PBIP_%2F_TMDL-00A4EF?style=for-the-badge&logo=microsoft&logoColor=white)
@@ -41,7 +41,7 @@ Aunque el prototipo inicial en Excel permitía una visualización básica de los
 #### 🟢 El Después: Centro de Control Ejecutivo en la Nube (Power BI Service)
 *Diseño moderno de alto contraste con Sidebar Navy corporativo, KPIs dinámicos con variación interanual (YoY), gráfico combinado de ventas vs. margen y barras 100% apiladas, desplegado y operativo en Power BI Service.*
 
-[![Abrir en Power BI Service](https://img.shields.io/badge/🚀_Abrir_en_Power_BI_Service-Cloud_Interactive-0078D4?style=for-the-badge&logo=powerbi&logoColor=white)](https://app.powerbi.com/groups/me/reports/b6b39ac8-21ee-4414-b3d6-ebb41c057b20/429d87bf754c01dc360e?experience=power-bi)
+[![Abrir en Power BI Service](https://img.shields.io/badge/🚀_Abrir_en_Power_BI_Service-Cloud_Interactive-0078D4?style=for-the-badge&logo=powerbi&logoColor=white)](https://app.powerbi.com/view?r=eyJrIjoiNDJiZGJmNGQtYmI0Ny00OWM2LWIzNTAtOWRiNTUyMjUwMDZiIiwidCI6IjgxY2NjYzQzLWI1NjEtNDFmNy05NDgwLWU5ZThmMDI3YzQ0MyIsImMiOjR9)
 
 ![Dashboard en Power BI Service](assets/dashboard_powerbi_service.jpg)
 
