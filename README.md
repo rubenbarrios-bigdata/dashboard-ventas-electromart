@@ -94,7 +94,6 @@ erDiagram
     Calendario ||--o{ Ventas_Supermercado : "1:N (Fecha Salida)"
     Clientes ||--o{ Ventas_Supermercado : "1:N (ID Cliente)"
     Productos ||--o{ Ventas_Supermercado : "1:N (ID Producto)"
-    _Medidas ||-- Ventas_Supermercado : "Cálculos DAX"
 
     Calendario {
         date Fecha PK
